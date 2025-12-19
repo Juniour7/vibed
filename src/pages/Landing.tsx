@@ -5,6 +5,7 @@ import Benefits from "../components/landing/Benefits"
 import Pricing from "../components/landing/Pricing"
 import Testimonials from "../components/landing/Testimonials"
 import Faq from "../components/landing/Faq"
+import BigCta from "../components/landing/BigCta"
 
 const Landing = () => {
   return (
@@ -15,6 +16,7 @@ const Landing = () => {
       <Pricing />
       <Testimonials />
       <Faq />
+      <BigCta />
     </div>
   )
 }
