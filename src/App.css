@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Default slides */
+
+
+
 @layer base {
   html {
     @apply font-man;
