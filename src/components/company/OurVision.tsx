@@ -26,7 +26,7 @@ const OurVision = () => {
       {/* Header Info */}
       <div className="max-w-7xl mx-auto mb-16 px-4 md:px-8">
         <h1 className="font-semibold text-2xl ">
-          👁️ Our Vision — Redefining the Way People <br /> Live Together
+          Our Vision — Redefining the Way People <br /> Live Together
         </h1>
         <p className="text-[#787878] text-lg max-w-3xl">
           At Vibed, we envision a world where finding a place to live also means finding your kind of people.

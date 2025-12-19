@@ -10,7 +10,7 @@ const OurStory = () => {
     <section className="w-full ">
         <div className="max-w-7xl  mx-auto px-4 md:px-8">
             <div className="space-y-3">
-                <h1 className="font-semibold text-2xl ">🌍 Our Story — Where the Right <br /> Vibe Becomes Home</h1>
+                <h1 className="font-semibold text-2xl ">Our Story — Where the Right <br /> Vibe Becomes Home</h1>
                 <p className=" text-[#787878]">Finding the right roommate shouldn’t feel like a gamble. Vibed was born from real experiences of mismatched living situations and the need for genuine connection. We set out to build a platform that makes shared living simple, safe, and human — helping you find not just a roommate, but someone who truly fits your vibe.</p>
             </div>
 

@@ -28,7 +28,7 @@ const Pricing = () => {
         <div className="max-w-7xl  mx-auto px-4 md:px-8 space-y-7">
             <div className="text-center space-y-3">
                 <h5 className="text-[#F4A261]">PRICING</h5>
-                <h1 className="font-sans text-2xl md:text-3xl lg:text-4xl font-semibold">💸 Simple Plan for Every Need</h1>
+                <h1 className="font-sans text-2xl md:text-3xl lg:text-4xl font-semibold">Simple Plan for Every Need</h1>
                 <p className="font-medium lg:w-[60%] mx-auto">Whether you’re just exploring or want to get matched faster, there’s a plan that fits your lifestyle.</p>
             </div>
 
@@ -56,7 +56,7 @@ const Pricing = () => {
             <div className="text-center pt-[1rem]">
                 <h2 className="text-xl md:text-2xl font-bold mb-4 font-sans">Free Plan</h2>
                 <p className="text-[#2B2B2B]">3 free swipes — Create a profile, Swift up to 3 profiles, match with roommates.</p>
-                <h6 className="text-lg text-[#3C4A4D] font-medium">👉 All plans include safe messaging, verified badges, and 24/7 support.</h6>
+                <h6 className="text-lg text-[#3C4A4D] font-medium">All plans include safe messaging, verified badges, and 24/7 support.</h6>
                 <button
                     className="bg-[#A79E9C] rounded-lg text-white font-medium px-7 py-3 text-lg mt-[1rem]"
                 >
