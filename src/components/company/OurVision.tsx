@@ -17,7 +17,7 @@ const VisionCard = ({ icon: Icon, title, description, className }) => (
 
 const OurVision = () => {
   return (
-    <section className="bg-white  w-[90%] mx-auto py-12 px-6">
+    <section className="bg-white  max-w-7xl  mx-auto px-4 md:px-8 py-12 px-6">
       {/* Header Section */}
       <div className="mb-16 max-w-3xl">
         <h1 className="font-bold text-3xl mb-4">

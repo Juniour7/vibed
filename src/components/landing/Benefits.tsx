@@ -15,7 +15,7 @@ const Benefits = () => {
 
   return (
     <section className="w-full py-[3rem] font-man ">
-        <div className="w-[90%] mx-auto bg-[url('/assets/Map.png')] bg-contain bg-center bg-no-repeat flex flex-col justify-center items-center text-center">
+        <div className="max-w-7xl  mx-auto px-4 md:px-8 bg-[url('/assets/Map.png')] bg-contain bg-center bg-no-repeat flex flex-col justify-center items-center text-center">
             <div className="space-y-3">
                 <h5 className="text-[#F4A261]">OUR BENEFITS</h5>
                 <h1 className="font-sans text-2xl md:text-3xl lg:text-4xl font-semibold">Why are we the world most innovative <br /> housemate matching platform?</h1>

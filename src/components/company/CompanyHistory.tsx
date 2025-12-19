@@ -3,7 +3,7 @@
 const CompanyHistory = () => {
   return (
     <section className="w-full py-[4rem] font-man">
-        <div className="w-[90%] mx-auto bg-gradient-to-r from-[#423224] to-[#1F1C1A] text-white p-3 md:p-11 ">
+        <div className="max-w-7xl  mx-auto px-4 md:px-8 bg-gradient-to-r from-[#423224] to-[#1F1C1A] text-white p-3 md:p-11 ">
             <div className="space-y-3 pb-5">
                 <h1 className="font-sans text-2xl md:text-3xl lg:text-4xl font-semibold">Company history</h1>
                 <p>Vibed began as a simple idea among friends who struggled to find compatible roommates while moving to new cities. What started as casual conversations about mismatched living situations turned into a mission to make shared housing more human and stress-free.

@@ -10,7 +10,7 @@ interface SectionProps {
 
 const ListingSection = ({ title, filterText, items }: SectionProps) => {
   return (
-    <div className="py-8 w-[90%] mx-auto bg-white p-3 ">
+    <div className="py-8 max-w-7xl  mx-auto px-4 md:px-8 bg-white p-3 ">
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-4">
           <h2 className="text-xl font-bold">{title}</h2>

@@ -14,7 +14,7 @@ const NavSm = () => {
 
   return (
     <div className="w-full bg-white fixed top-0 border-b border-[#E8EAED] z-50">
-      <div className="w-[90%] mx-auto py-3 flex justify-between items-center">
+      <div className="max-w-7xl  mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
         {/* Logo */}
         <div>
           <img src="/vibed-dark.png" alt="Vibed Logo" className="h-[2rem]" />
@@ -39,7 +39,7 @@ const NavSm = () => {
       {/*  */}
       {open && (
         <div className="bg-white border-t border-[#E8EAED]">
-          <ul className="flex flex-col w-[90%] mx-auto py-4 gap-4">
+          <ul className="flex flex-col max-w-7xl  mx-auto px-4 md:px-8 py-4 gap-4">
             {NavLinks.map((link) => (
               <li key={link.name}>
                 <a

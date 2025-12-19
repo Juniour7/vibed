@@ -4,7 +4,7 @@ import { SlidersHorizontal } from "lucide-react"
 const Hero = () => {
   return (
     <section className="w-full font-man bg-[url('/assets/Group.png')] bg-contain bg-top bg-no-repeat pt-[8rem]">
-        <div className="w-[90%] mx-auto text-center flex flex-col justify-center items-center">
+        <div className="max-w-7xl  mx-auto px-4 md:px-8 text-center flex flex-col justify-center items-center">
             <div className="lg:w-[60%] mx-auto">
                 <h1 className="font-sans text-2xl md:text-3xl lg:text-4xl font-semibold">Find Your Perfect Room and the Right Vibe to Match</h1>
                 <p className="text-[#787878] font-medium">Browse verified apartments and roommate listings that fit your lifestyle, budget, and personality. Your next home — and your next great connection starts here.</p>

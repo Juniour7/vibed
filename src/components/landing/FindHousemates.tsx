@@ -33,7 +33,7 @@ const FindHousemates = () => {
   ];
 
   return (
-    <section className="relative w-[90%] mx-auto py-20">
+    <section className="relative max-w-7xl  mx-auto px-4 md:px-8 py-20">
       {/* Header */}
       <div className="text-center space-y-2 mb-20">
         <h1 className="text-3xl md:text-4xl font-semibold">

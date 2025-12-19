@@ -3,7 +3,7 @@
 const Hero = () => {
   return (
     <section className="w-full py-[5rem] bg-[url('/assets/Group.png')] bg-contain bg-center bg-no-repeat">
-        <div className="w-[90%] mx-auto space-y-5 flex flex-col items-center justify-center text-center">
+        <div className="max-w-7xl  mx-auto px-4 md:px-8 space-y-5 flex flex-col items-center justify-center text-center">
             <div className="w-full">
                 <img src="/assets/video.jpg" alt="" className="w-full h-full object-cover" />
             </div>

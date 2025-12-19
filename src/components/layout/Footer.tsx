@@ -65,7 +65,7 @@ const Legal = [
 
   return (
     <footer className="bg-[#EAEAEC] w-full py-[4rem] font-man">
-      <section className="w-[90%] mx-auto grid md:grid-cols-4 gap-4">
+      <section className="max-w-7xl  mx-auto px-4 md:px-8 grid md:grid-cols-4 gap-4">
         <div className="space-y-3 ">
           <h4 className="font-semibold">Company</h4>
           <ul className="space-y-2">
@@ -105,7 +105,7 @@ const Legal = [
         </div>
       </section>
 
-      <section className="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center mt-[2rem]">
+      <section className="max-w-7xl  mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center mt-[2rem]">
         {/* Social Media Icons */}
         <div className="flex space-x-4">
           {SocialMedia.map((item, index) => (

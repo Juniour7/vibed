@@ -23,77 +23,79 @@ const PropertyDetail = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 pt-[7rem]">
-      {/* 1. Header & Navigation */}
-      <nav className="flex justify-between items-center mb-6">
-        <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-sm font-medium hover:underline">
-          <ChevronLeft size={18} /> Back
-        </button>
-        <div className="flex gap-4">
-          <button className="flex items-center gap-2 text-sm border px-3 py-1.5 rounded-lg hover:bg-gray-50">
-            <Share size={16} /> Share
+    <div className='w-full bg-[#fafafa]'>
+        {/* 1. Header & Navigation */}
+        <nav className="flex justify-between items-center mb-6 max-w-7xl  mx-auto px-4 md:px-8 pt-[9rem]">
+          <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-sm font-medium hover:underline border py-2 px-5 rounded-md text-[#787878] bg-white">
+            <ChevronLeft size={18} /> Back
           </button>
-          <button className="flex items-center gap-2 text-sm border px-3 py-1.5 rounded-lg hover:bg-gray-50">
-            <Heart size={16} /> Favorite
-          </button>
-        </div>
-      </nav>
+          <div className="flex gap-4">
+            <button className="flex items-center gap-2 text-sm border px-3 py-1.5 rounded-lg hover:bg-gray-50">
+              <Share size={16} /> Share
+            </button>
+            <button className="flex items-center gap-2 text-sm border px-3 py-1.5 rounded-lg hover:bg-gray-50">
+              <Heart size={16} /> Favorite
+            </button>
+          </div>
+        </nav>
 
-      <h1 className="text-2xl md:text-3xl font-bold mb-6">{property.title}</h1>
+        <div className='w-full bg-white'>
+            <div className="max-w-7xl  mx-auto px-4 md:px-8 py-6 ">
+                <h1 className="text-2xl md:text-3xl font-bold mb-6">{property.title}</h1>
 
-      {/* 2. Image Gallery Grid */}
-      <div className="grid grid-cols-4 grid-rows-2 gap-3 h-[300px] md:h-[500px] rounded-3xl overflow-hidden mb-8">
-        <div className="col-span-2 row-span-2 relative">
-          <img src={property.image} className="w-full h-full object-cover" alt="Main" />
-        </div>
-        <div className="col-span-1 row-span-1"><img src="https://images.unsplash.com/photo-1522771739844-649f6d1712af" className="w-full h-full object-cover" /></div>
-        <div className="col-span-1 row-span-1"><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb" className="w-full h-full object-cover" /></div>
-        <div className="col-span-1 row-span-1"><img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0" className="w-full h-full object-cover" /></div>
-        <div className="col-span-1 row-span-1 relative">
-          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f" className="w-full h-full object-cover" />
-          <button className="absolute bottom-4 right-4 bg-white text-black px-4 py-2 rounded-lg text-sm font-bold shadow-lg">View more</button>
-        </div>
-      </div>
-
-      {/* 3. Main Content Layout (2 Columns) */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        
-        {/* Left Column: Info */}
-        <div className="lg:col-span-2 space-y-8">
-          <section>
-            <h2 className="text-xl font-bold mb-4">About this place</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Enjoy a unique taste of luxury at this centrally located place. 
-              This loft is at the heart of Portobello Road...
-            </p>
-          </section>
-
-          <hr />
-
-          <section>
-            <h2 className="text-xl font-bold mb-6">What this place offers</h2>
-            <div className="grid grid-cols-2 gap-y-4">
-               <AmenityItem icon={<MapPin size={20}/>} label="City skyline view" />
-               <AmenityItem icon={<Wifi size={20}/>} label="Wifi" />
-               <AmenityItem icon={<Wind size={20}/>} label="Air conditioning" />
-               <AmenityItem icon={<Car size={20}/>} label="Free parking" />
-            </div>
-            <button className="mt-6 border-2 border-black px-6 py-2 rounded-xl font-bold hover:bg-black hover:text-white transition">Show all amenities</button>
-          </section>
-          
-          <hr />
-
-          {/* Map Section */}
-          <section>
-             <h2 className="text-xl font-bold mb-4">Maps for Direction</h2>
-             <div className="w-full h-80 bg-gray-200 rounded-3xl overflow-hidden relative">
-                {/* Replace with actual Map component later */}
-                <div className="absolute inset-0 flex items-center justify-center text-gray-400 italic">
-                  Interactive Map Placeholder
+                {/* 2. Image Gallery Grid */}
+                <div className="grid grid-cols-4 grid-rows-2 gap-3 h-[300px] md:h-[500px] rounded-3xl overflow-hidden mb-8">
+                  <div className="col-span-2 row-span-2 relative">
+                    <img src={property.image} className="w-full h-full object-cover" alt="Main" />
+                  </div>
+                  <div className="col-span-1 row-span-1"><img src="https://images.unsplash.com/photo-1522771739844-649f6d1712af" className="w-full h-full object-cover" /></div>
+                  <div className="col-span-1 row-span-1"><img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb" className="w-full h-full object-cover" /></div>
+                  <div className="col-span-1 row-span-1"><img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0" className="w-full h-full object-cover" /></div>
+                  <div className="col-span-1 row-span-1 relative">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f" className="w-full h-full object-cover" />
+                    <button className="absolute bottom-4 right-4 bg-white text-black px-4 py-2 rounded-lg text-sm font-bold shadow-lg">View more</button>
+                  </div>
                 </div>
-             </div>
-          </section>
-        </div>
+
+                {/* 3. Main Content Layout (2 Columns) */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        
+                    {/* Left Column: Info */}
+                    <div className="lg:col-span-2 space-y-8">
+                    <section>
+                     <h2 className="text-xl font-bold mb-4">About this place</h2>
+                     <p className="text-gray-600 leading-relaxed">
+                       Enjoy a unique taste of luxury at this centrally located place. 
+                       This loft is at the heart of Portobello Road...
+                     </p>
+                    </section>
+
+                    <hr />
+
+                    <section>
+                      <h2 className="text-xl font-bold mb-6">What this place offers</h2>
+                      <div className="grid grid-cols-2 gap-y-4">
+                         <AmenityItem icon={<MapPin size={20}/>} label="City skyline view" />
+                         <AmenityItem icon={<Wifi size={20}/>} label="Wifi" />
+                         <AmenityItem icon={<Wind size={20}/>} label="Air conditioning" />
+                         <AmenityItem icon={<Car size={20}/>} label="Free parking" />
+                      </div>
+                      <button className="mt-6 border-2 border-black px-6 py-2 rounded-xl font-bold hover:bg-black hover:text-white transition">Show all amenities</button>
+                    </section>
+          
+                    <hr />
+
+                    {/* Map Section */}
+                    <section>
+                       <h2 className="text-xl font-bold mb-4">Maps for Direction</h2>
+                       <div className="w-full h-80 bg-gray-200 rounded-3xl overflow-hidden relative">
+                          {/* Replace with actual Map component later */}
+                          <div className="absolute inset-0 flex items-center justify-center text-gray-400 italic">
+                            Interactive Map Placeholder
+                          </div>
+                       </div>
+                    </section>
+                    </div>
 
         {/* Right Column: Reservation & Reviews */}
         <div className="space-y-6">
@@ -141,6 +143,8 @@ const PropertyDetail = () => {
           </div>
         </div>
       </div>
+      </div>
+    </div>
     </div>
   );
 };

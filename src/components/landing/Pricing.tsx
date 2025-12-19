@@ -25,7 +25,7 @@ const Pricing = () => {
 
   return (
     <section className="w-full bg-[url('/assets/lines.png')] bg-contain bg-no-repeat  py-[3rem] font-man">
-        <div className="w-[90%] mx-auto space-y-7">
+        <div className="max-w-7xl  mx-auto px-4 md:px-8 space-y-7">
             <div className="text-center space-y-3">
                 <h5 className="text-[#F4A261]">PRICING</h5>
                 <h1 className="font-sans text-2xl md:text-3xl lg:text-4xl font-semibold">💸 Simple Plan for Every Need</h1>
