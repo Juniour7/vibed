@@ -91,6 +91,7 @@ const FindHousemates = () => {
                 <img
                   src={step.image}
                   alt={step.title}
+                  loading="lazy"
                   className="w-full h-[260px] object-cover"
                 />
               </div>

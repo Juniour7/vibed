@@ -55,6 +55,7 @@ const OurVision = () => {
           <img 
             src="/assets/diversity.jpg" 
             alt="People connecting" 
+            loading='lazy'
             className="h-[20rem] object-cover opacity-90 hidden lg:block"
           />
         </div>
