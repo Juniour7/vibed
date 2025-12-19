@@ -3,7 +3,7 @@
 const BigCta = () => {
   return (
     <section className="w-full py-[3rem] font-man">
-        <div className="w-[90%] mx-auto  bg-gradient-to-r from-[#B58863] to-[#4F3B2B] rounded-2xl flex relative overflow-hidden">
+        <div className="w-[90%] md:w-[80%] mx-auto  bg-gradient-to-r from-[#B58863] to-[#4F3B2B] rounded-2xl flex relative overflow-hidden">
             <div className="flex flex-col md:flex-row justify-between bg-[url('/assets/lines.png')] bg-no-repeat bg-center  [background-size:150%]">
                 <div className="p-4 md:p-11 basis-[50%] h-full flex flex-col justify-between">
                     <div className="space-y-3">
@@ -43,7 +43,10 @@ const BigCta = () => {
                 </div>
 
                 {/* Phone Mockup */}
-                <div className="px-8 pt-4">
+                <div className="px-8 pt-4 flex items-center">
+                    <div className="">
+                        <img src="/assets/6.png" alt="" />
+                    </div>
                     <img src="/assets/iphone.png" alt="" />
                 </div>
             </div>

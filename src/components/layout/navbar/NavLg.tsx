@@ -25,7 +25,7 @@ const NavLg = () => {
 
   // Navbar background
   const navbarBg =
-    isHome && !scrolled ? "bg-transparent" : "bg-white shadow-sm";
+    !scrolled ? "bg-transparent" : "bg-white shadow-sm";
 
   // Text color
   const linkColor =
