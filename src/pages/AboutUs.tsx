@@ -9,7 +9,9 @@ const AboutUs = () => {
     <div className="bg-[#fafafa] w-full min-h-screen font-man">
       <Hero />
       <OurStory />
-      <OurVision />
+      <div className="px-3 md:px-8">
+        <OurVision />
+      </div>
       <CompanyHistory />
     </div>
   )
