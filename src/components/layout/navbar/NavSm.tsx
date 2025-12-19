@@ -9,7 +9,7 @@ const NavSm = () => {
     { name: 'Home', path: '/' },
     { name: 'Find Room', path: '/find-room' },
     { name: 'Company', path: '/about-us' },
-    { name: 'Contact Us', path: '/contact-us' },
+    { name: 'Get in touch', path: '/contact-us' },
   ];
 
   return (
@@ -38,7 +38,7 @@ const NavSm = () => {
 
       {/*  */}
       {open && (
-        <div className="bg-white border-t border-[#E8EAED]">
+        <div className="bg-[#fafafa] border-t border-[#E8EAED]">
           <ul className="flex flex-col max-w-7xl  mx-auto px-4 md:px-8 py-4 gap-4">
             {NavLinks.map((link) => (
               <li key={link.name}>
