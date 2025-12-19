@@ -27,7 +27,7 @@ const ApartmentCard = ({ item }: { item: Apartment }) => {
         <div className="flex items-center gap-1 text-xs">
           <Star size={12} className="fill-yellow-400 text-yellow-400" />
           <span className="font-medium">{item.rating}</span>
-          <span className="text-gray-400">({item.reviews})</span>
+          <span className="text-gray-400">({item.reviewsCount})</span>
         </div>
       </div>
     </Link>

@@ -1,7 +1,14 @@
-import React from 'react';
 import { Eye, Clock, MoveUpRight } from 'lucide-react'; // Example icons
+import type { ComponentType } from "react";
 
-const VisionCard = ({ icon: Icon, title, description, className }) => (
+interface OurVisionProps {
+  icon: ComponentType<{ size?: number; className?: string }>;
+  title: string;
+  description: string;
+  className?: string;
+}
+
+const VisionCard = ({ icon: Icon, title, description, className }: OurVisionProps ) => (
   <div className={`bg-[#A39994] p-5 rounded-2xl text-white shadow-xl z-20 ${className}`}>
     <div className="flex items-center gap-3 mb-3">
       <div className="p-1 border border-white/30 rounded-full">
@@ -17,7 +24,7 @@ const VisionCard = ({ icon: Icon, title, description, className }) => (
 
 const OurVision = () => {
   return (
-    <section className="bg-white  max-w-7xl  mx-auto px-4 md:px-8 py-12 px-6">
+    <section className="bg-white  max-w-7xl  mx-auto px-4 md:px-8 py-12">
       {/* Header Section */}
       <div className="mb-16 max-w-3xl">
         <h1 className="font-bold text-3xl mb-4">
