@@ -21,7 +21,7 @@ const FindRoom = () => {
   return (
     <div className="bg-[#fafafa] w-full min-h-screen font-man">
       <Hero onSearch={handleSearch} />
-      <div className="py-[4rem]">
+      <div className="py-[4rem] px-4">
         {sections.map((section) => (
           <ListingSection 
             key={section.id}
