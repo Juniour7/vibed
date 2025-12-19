@@ -9,6 +9,7 @@ export default {
         fontFamily: {
           sans: ["Sansation", "sans-serif"],
           man: ["Manrope", "sans-serif"],
+          riot: ["Protest Riot", "sans-serif"],
         },
         colors: {
           primary: '#B58863',
