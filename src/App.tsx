@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Other components
 import AppLayout from './components/layout/AppLayout';
+import PropertyDetail from './components/findroom/PropertyDetail';
 
 // App Pages
 import Landing from './pages/Landing';
@@ -21,7 +22,8 @@ function App() {
             <Route path='/contact-us' element={<ContactUs />} />
             <Route path='/about-us' element={<AboutUs />} />
             <Route path='/find-room' element={<FindRoom />} />
-            </Route>
+            <Route path="/details/:id" element={<PropertyDetail />} />
+          </Route>
         </Routes>
       </Router>
     </>
