@@ -2,8 +2,8 @@
 
 const BigCta = () => {
   return (
-    <section className="w-full py-[3rem] font-man">
-        <div className="w-[90%] md:w-[80%] mx-auto  bg-gradient-to-r from-[#B58863] to-[#4F3B2B] rounded-2xl flex relative overflow-hidden">
+    <section className="w-full py-[3rem] font-man px-4 md:px-8">
+        <div className="max-w-6xl px-4 md:px-8 mx-auto bg-gradient-to-r from-[#B58863] to-[#4F3B2B] rounded-2xl flex relative overflow-hidden">
             <div className="flex flex-col md:flex-row justify-between bg-[url('/assets/lines.png')] bg-no-repeat bg-center  [background-size:150%]">
                 <div className="p-4 md:p-11 basis-[50%] h-full flex flex-col justify-between">
                     <div className="space-y-3">

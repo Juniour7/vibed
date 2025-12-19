@@ -34,7 +34,7 @@ const Faq = () => {
 
   return (
     <section className="w-full py-[3rem] font-man">
-      <div className="w-[90%] md:w-[70%] lg:w-[60%] mx-auto">
+      <div className="max-w-7xl md:w-[70%] lg:w-[60%] mx-auto px-3 md:px-8">
         {/* Header */}
         <div className="space-y-3 text-center mb-14">
           <h5 className="text-[#F4A261] tracking-wider">FAQs</h5>

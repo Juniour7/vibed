@@ -1,8 +1,12 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { Share, Heart, ChevronLeft, Star } from 'lucide-react';
+import { ChevronLeft, Star } from 'lucide-react';
 import { mockApartments } from '../data/mockData';
 import { slugify } from '../utils/slugify';
 import * as LucideIcons from 'lucide-react';
+
+// COMPONENTS]
+import ShareModal from './modals/ShareModal';
+import { useState } from 'react';
 
 // Helper to render dynamic icons from the mock data strings
 const DynamicIcon = ({ name, size = 20 }: { name: string; size?: number }) => {
@@ -13,6 +17,8 @@ const DynamicIcon = ({ name, size = 20 }: { name: string; size?: number }) => {
 const PropertyDetail = () => {
   const { id: titleSlug } = useParams();
   const navigate = useNavigate();
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+   const shareUrl = window.location.href;
   
   const property = mockApartments.find(
     (apt) => slugify(apt.title) === titleSlug
@@ -31,24 +37,42 @@ const PropertyDetail = () => {
 
   return (
     <div className='w-full bg-[#fafafa]'>
+      {/* Share Modal Component */}
+        <ShareModal 
+          isOpen={isShareModalOpen} 
+          onClose={() => setIsShareModalOpen(false)} 
+          shareUrl={shareUrl} 
+        />
+
         {/* 1. Header & Navigation */}
-        <nav className="flex justify-between items-center mb-6 max-w-7xl mx-auto px-4 md:px-8 pt-[9rem]">
+        <nav className="flex flex-col  space-y-2 md:flex-row justify-between items-start md:items-center mb-6 max-w-7xl mx-auto px-4 md:px-8 pt-[9rem]">
           <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-sm font-medium hover:underline border py-2 px-5 rounded-md text-[#787878] bg-white">
             <ChevronLeft size={18} /> Back
           </button>
-          <div className="flex gap-4">
-            <button className="flex items-center gap-2 text-sm border px-3 py-1.5 rounded-lg hover:bg-gray-50 bg-white">
-              <Share size={16} /> Share
-            </button>
-            <button className="flex items-center gap-2 text-sm border px-3 py-1.5 rounded-lg hover:bg-gray-50 bg-white">
-              <Heart size={16} /> Favorite
-            </button>
+          <div className='flex items-center text-xs md:text-base'>
+            <p className='text-primary'>Filter result:</p>
+            <div className='flex items-center divide-x-2  text-[#787878] font-medium'>
+              <p className='px-2'>{property.location}</p>
+              <p className='px-2'>{property.propertyType}</p>
+            </div>
           </div>
         </nav>
 
         <div className='w-full bg-white'>
             <div className="max-w-7xl mx-auto px-4 md:px-8 py-6">
-                <h1 className="text-2xl md:text-3xl font-bold mb-6">{property.title}</h1>
+                <div className='flex justify-between items-center'>
+                  <h1 className="text-2xl md:text-3xl font-bold mb-6">{property.title}</h1>
+
+                  <div className='flex gap-4 items-center'>
+                    <button onClick={() => setIsShareModalOpen(true)} className=' rounded-full border p-1 w-11 h-11 flex flex-col justify-center items-center hover:bg-gray-200 transition-colors duration-300 ease-in-out'>
+                      <span><LucideIcons.Share2 /></span>
+                    </button>
+
+                    <button className='text-xl text-[#e71d1d] rounded-full border p-1 w-11 h-11 flex flex-col justify-center items-center hover:bg-gray-200 transition-colors duration-300 ease-in-out'>
+                      <span><i className="fa-solid fa-heart"></i></span>
+                    </button>
+                  </div>
+                </div>
 
                 {/* 2. Image Gallery Grid */}
                 <div className="grid grid-cols-4 grid-rows-2 gap-3 h-[450px] rounded-3xl overflow-hidden mb-10 group">
