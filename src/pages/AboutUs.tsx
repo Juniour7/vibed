@@ -2,6 +2,7 @@
 import Hero from "../components/company/Hero"
 import OurStory from "../components/company/OurStory"
 import OurVision from "../components/company/OurVision"
+import CompanyHistory from "../components/company/CompanyHistory"
 
 const AboutUs = () => {
   return (
@@ -9,6 +10,7 @@ const AboutUs = () => {
       <Hero />
       <OurStory />
       <OurVision />
+      <CompanyHistory />
     </div>
   )
 }
