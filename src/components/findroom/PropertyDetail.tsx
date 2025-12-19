@@ -1,16 +1,29 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { Share, Heart, ChevronLeft, Star, MapPin, Wifi, Car, Coffee, Wind, ShieldCheck } from 'lucide-react';
 import { mockApartments } from '../data/mockData';
+import { slugify } from '../utils/slugify';
 
 const PropertyDetail = () => {
-  const { id } = useParams();
+  const { id: titleSlug } = useParams();
   const navigate = useNavigate();
   
-  // Find the specific apartment from your mock data
-  const property = mockApartments.find(p => p.id === id) || mockApartments[0];
+  const property = mockApartments.find(
+    (apt) => slugify(apt.title) === titleSlug
+  );
+
+  if (!property) {
+    return (
+      <div className="h-screen flex flex-col items-center justify-center">
+        <h1 className="text-2xl font-bold">Property not found</h1>
+        <button onClick={() => navigate('/')} className="mt-4 text-blue-500 underline">
+          Go back home
+        </button>
+      </div>
+    );
+  }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-8 py-6">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 pt-[7rem]">
       {/* 1. Header & Navigation */}
       <nav className="flex justify-between items-center mb-6">
         <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-sm font-medium hover:underline">

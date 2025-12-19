@@ -27,7 +27,7 @@ const ListingSection = ({ title, filterText, items }: SectionProps) => {
       </div>
 
       {/* Grid for desktop, horizontal scroll for mobile */}
-      <div className="flex overflow-x-auto lg:grid lg:grid-cols-5 gap-5 pb-4 scrollbar-hide">
+      <div className="flex overflow-x-auto lg:grid lg:grid-cols-5 gap-7 pb-4 scrollbar-hide">
         {items.map((apt) => (
           <ApartmentCard key={apt.id} item={apt} />
         ))}

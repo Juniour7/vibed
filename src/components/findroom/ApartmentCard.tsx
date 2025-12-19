@@ -1,11 +1,13 @@
 import { Heart, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import type { Apartment } from '../data/mockData';
+import { slugify } from '../utils/slugify';
 
 const ApartmentCard = ({ item }: { item: Apartment }) => {
+    const titleSlug = slugify(item.title);
   return (
-    <Link to={`/details/${item.id}`} className="group block min-w-[200px] lg:min-w-[240px] flex-1">
-      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-3">
+    <Link to={`/details/${titleSlug}`} className="group block min-w-[200px] lg:min-w-[240px] flex-1 bg-white shadow-md rounded-2xl">
+      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-3 ">
         <img 
           src={item.image} 
           alt={item.title} 
@@ -16,7 +18,7 @@ const ApartmentCard = ({ item }: { item: Apartment }) => {
         </button>
       </div>
 
-      <div className="space-y-1">
+      <div className="space-y-1 p-2">
         <div className="flex justify-between items-start">
           <h3 className="font-semibold text-sm line-clamp-1">{item.title}</h3>
           <span className="font-bold text-sm">{item.price}</span>
