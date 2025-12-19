@@ -42,7 +42,9 @@ const NavLg = () => {
       <div className="w-[90%] mx-auto py-4 flex justify-between items-center">
         
         {/* Logo */}
-        <img src={logoSrc} alt="Vibed" className="h-8" />
+        <NavLink to="/">
+          <img src={logoSrc} alt="Vibed" className="h-8" />
+        </NavLink>
 
         <div className="flex gap-6 items-center">
           
@@ -57,8 +59,8 @@ const NavLg = () => {
                   transition-all duration-200 font-medium
                   ${linkColor}
                   ${
-                    isActive && !isHome
-                      ? "border-b-2 border-[#3C4A4D]"
+                    isActive 
+                      ? "border-b-2 border-[#3C4A4D] rounded-md px-3"
                       : ""
                   }
                   `
