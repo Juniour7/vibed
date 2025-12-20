@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { MessageSquareText, UserRound, UserStar } from "lucide-react";
+import { fadeUp, cardVariant, container } from "../animations";
 
 const FindHousemates = () => {
   const steps = [
@@ -33,16 +35,22 @@ const FindHousemates = () => {
   ];
 
   return (
-    <section className="relative max-w-7xl  mx-auto px-4 md:px-8 py-20">
+    <section className="relative max-w-7xl mx-auto px-4 md:px-8 py-20">
       {/* Header */}
-      <div className="text-center space-y-2 mb-20">
+      <motion.div
+        className="text-center space-y-2 mb-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={fadeUp}
+      >
         <h1 className="text-3xl md:text-4xl font-semibold">
           Find your ideal Housemates
         </h1>
         <p className="text-gray-600">
           In 4 easy steps, connect with trusted individuals that fit your Vibe.
         </p>
-      </div>
+      </motion.div>
 
       {/* Curved dotted connectors (desktop only) */}
       <svg
@@ -72,14 +80,22 @@ const FindHousemates = () => {
       </svg>
 
       {/* Steps */}
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-y-28 gap-x-20">
+      <motion.div
+        className="relative grid grid-cols-1 md:grid-cols-2 gap-y-28 gap-x-20"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {steps.map((step, index) => {
           const isRight = index % 2 !== 0;
 
           return (
-            <div
+            <motion.div
               key={index}
               className={`relative flex flex-col ${isRight ? "md:translate-y-20" : ""}`}
+              variants={cardVariant}
+              whileHover={{ y: -4 }}
             >
               {/* Step number */}
               <div className="absolute -top-10 left-0 w-9 h-9 rounded-full bg-[#F4A261]/20 text-[#F4A261] flex items-center justify-center font-semibold">
@@ -99,15 +115,17 @@ const FindHousemates = () => {
               {/* Text */}
               <div className="mt-4 max-w-sm">
                 <div className="flex items-center gap-1">
-                    <span className="text-[#F4A261]"><step.icon className="text-[#F4A261] w-5 h-5" /></span>
-                    <h3 className="font-semibold text-lg">{step.title}</h3>
+                  <span className="text-[#F4A261]">
+                    <step.icon className="text-[#F4A261] w-5 h-5" />
+                  </span>
+                  <h3 className="font-semibold text-lg">{step.title}</h3>
                 </div>
                 <p className="text-gray-600 mt-2">{step.description}</p>
               </div>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };
