@@ -29,8 +29,8 @@ const OurVision = () => {
           Our Vision — Redefining the Way People <br /> Live Together
         </h1>
         <p className="text-[#787878] text-lg max-w-3xl">
-          At Vibed, we envision a world where finding a place to live also means finding your kind of people.
-        </p>
+          At Vibed, we envision an Ireland where finding a place to live also means finding your kind of people.
+        </p>Welcome to Vibed – The Most Innovative Housemates matching App in Ireland
       </div>
 
       {/* Main Interactive Design Container */}

@@ -17,7 +17,7 @@ const Hero = () => {
               <span className="text-[#F4A261]">and Vibe</span>
             </h1>
             <p className="text-lg md:text-xl">
-              Welcome to Vibed – The World’s Most Innovative Housing App
+              Welcome to Vibed – The Most Innovative Housemates matching App in Ireland
             </p>
           </div>
 
