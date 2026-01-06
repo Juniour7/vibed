@@ -8,7 +8,7 @@ const NavLg = () => {
 
   const NavLinks = [
     { name: "Home", path: "/" },
-    { name: "Find Room", path: "/find-room" },
+    // { name: "Find Room", path: "/find-room" },
     { name: "Company", path: "/about-us" },
     { name: "Contact Us", path: "/contact-us" },
   ];

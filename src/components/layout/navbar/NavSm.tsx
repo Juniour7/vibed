@@ -7,7 +7,7 @@ const NavSm = () => {
   const [open, setOpen] = useState(false);
   const NavLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Find Room', path: '/find-room' },
+    // { name: 'Find Room', path: '/find-room' },
     { name: 'Company', path: '/about-us' },
     { name: 'Get in touch', path: '/contact-us' },
   ];

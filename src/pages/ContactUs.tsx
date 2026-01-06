@@ -20,8 +20,8 @@ const ContactUs = () => {
     }
   ]
   return (
-    <div className="bg-[#fafafa] w-full min-h-screen font-man">
-      <div className="w-[90%] pt-[5rem]  mx-auto flex flex-col justify-center items-center font-man">
+    <div className="bg-[#fafafa] w-full font-man">
+      <div className="max-w-7xl pt-[5rem]  mx-auto flex flex-col justify-center items-center font-man">
         <div className="md:text-center space-y-2">
           <h1 className="font-sans text-2xl md:text-3xl lg:text-4xl font-semibold">Contact Us</h1>
           <p className="text-[#787878] font-medium">Any question or remarks? Just write us a message!</p>
