@@ -11,25 +11,21 @@ const Footer = () => {
   {
     title: 'Contact Us',
     url: '/contact-us',
-  },
-  {
-    title: 'Find your Housemate',
-    url: '/find-room',
   }
 ]
 
 const SupportSection = [
   {
     title: 'Help Center',
-    url: '/help-center',
+    url: '/',
   },
   {
     title: 'Report a Listing or User',
-    url: '/terms-of-service',
+    url: '/',
   },
   {
     title: 'Safety & Verification Policy',
-    url: '/terms-of-service',
+    url: '/',
   }
 ]
 
@@ -37,11 +33,11 @@ const SupportSection = [
 const Legal = [
   {
     title: 'Terms & conditions',
-    url: '/terms-of-service',
+    url: '/',
   },
   {
     title: 'Privacy Policy',
-    url: '/privacy-policy',
+    url: '/',
   }
 ]
   const SocialMedia = [
@@ -119,7 +115,7 @@ const Legal = [
 
         {/* Copyright */}
         <div className="mt-4 md:mt-0">
-          <p className="text-dark text-sm">© 2025, Vibed All rights reserved.</p>
+          <p className="text-dark text-sm">© {new Date().getFullYear()}, Vibed All rights reserved.</p>
         </div>
       </section>
     </footer>

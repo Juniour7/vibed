@@ -1,11 +1,6 @@
-import { useState } from "react";
-import PhoneInput from "react-phone-number-input";
-import "react-phone-number-input/style.css";
-// 1. Import the Variants type
 import { motion, type Variants } from "framer-motion";
 
 const Hero = () => {
-  const [phone, setPhone] = useState<string | undefined>();
 
   
 const container: Variants = {
