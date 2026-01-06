@@ -72,30 +72,17 @@ const scaleIn: Variants = {
             variants={scaleIn}
           >
             <div className="flex items-center bg-white rounded-full px-3 py-2 justify-center w-full md:max-w-md mx-auto shadow-lg gap-2">
-              <PhoneInput
-                value={phone}
-                onChange={setPhone}
-                placeholder="Enter phone number"
-                defaultCountry="CI"
+              <input 
+                type="email" 
+                placeholder="vibed@email.com"
                 required
-                international
-                className={`
-                  group flex items-center w-full px-2 bg-white text-dark
-                  [&_.PhoneInputCountrySelect]:pr-2 [&_.PhoneInputCountrySelect]:pl-3
-                  [&_.PhoneInputCountrySelect]:border-r [&_.PhoneInputCountrySelect]:border-black/50
-                  [&_.PhoneInputCountryIcon]:w-7 [&_.PhoneInputCountryIcon]:h-5
-                  [&_.PhoneInputCountryIcon]:rounded-sm
-                  [&_.PhoneInputCountrySelectArrow]:opacity-60 [&_.PhoneInputCountrySelectArrow]:ml-2
-                  [&_.PhoneInputInput]:border-none [&_.PhoneInputInput]:bg-transparent
-                  [&_.PhoneInputInput]:flex-grow [&_.PhoneInputInput]:py-3
-                  [&_.PhoneInputInput]:pl-3 [&_.PhoneInputInput]:text-base
-                  [&_.PhoneInputInput]:outline-none [&_.PhoneInputInput]:placeholder:text-gray-600
-                `}
+                className="w-full outline-none text-dark p-1 "
               />
 
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 whileHover={{ scale: 1.02 }}
+                type="submit"
                 className="bg-[#F4A261] text-black px-6 py-2 rounded-full font-medium whitespace-nowrap hidden md:block"
               >
                 Get Started
