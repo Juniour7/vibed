@@ -1,6 +1,9 @@
+import { useState } from "react"
+import SignupModal from "../SignupModal"
 
 
 const BigCta = () => {
+    const [isSignupOpen, setIsSignupOpen] = useState<boolean>(false);;
   return (
     <section className="w-full py-[3rem] font-man px-4 md:px-8">
         <div className="max-w-6xl px-4 md:px-8 mx-auto bg-gradient-to-r from-[#B58863] to-[#4F3B2B] rounded-2xl flex relative overflow-hidden">
@@ -13,6 +16,7 @@ const BigCta = () => {
                         <div className="flex gap-3 items-center">
                             <button
                                 className="bg-white text-black rounded-full px-5 md:px-7 py-3 font-medium"
+                                onClick={() => setIsSignupOpen(true)}
                             >
                                 Sign Up
                             </button>
@@ -51,6 +55,11 @@ const BigCta = () => {
                 </div>
             </div>
         </div>
+        {/* Modal */}
+       <SignupModal
+        isOpen={isSignupOpen}
+        onClose={() => setIsSignupOpen(false)}
+      />
     </section>
   )
 }

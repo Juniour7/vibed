@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { fadeUp, cardVariant, container, waterWiggle } from "../animations";
 
+import SignupModal from "../SignupModal";
+
 const Pricing = () => {
+  const [isSignupOpen, setIsSignupOpen] = useState<boolean>(false);;
   const PricingPlans = [
     {
       name: "Our most popular: €24.99 (2 weeks)",
@@ -75,6 +79,7 @@ const Pricing = () => {
                 variants={waterWiggle}
                 whileTap="tap"
                 whileHover="hover"
+                onClick={() => setIsSignupOpen(true)}
               >
                 {plan.btn}
               </motion.button>
@@ -102,11 +107,18 @@ const Pricing = () => {
             variants={waterWiggle}
             whileTap="tap"
             whileHover="hover"
+            onClick={() => setIsSignupOpen(true)}
           >
             Start free and Upgrade anytime
           </motion.button>
         </motion.div>
       </div>
+
+       {/* Modal */}
+        <SignupModal
+          isOpen={isSignupOpen}
+          onClose={() => setIsSignupOpen(false)}
+        />
     </section>
   );
 };
