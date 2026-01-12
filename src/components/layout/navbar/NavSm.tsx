@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import { Menu, X } from "lucide-react"
+import { Link } from "react-router-dom";
 
 
 const NavSm = () => {
@@ -8,7 +7,7 @@ const NavSm = () => {
   const NavLinks = [
     { name: 'Home', path: '/' },
     // { name: 'Find Room', path: '/find-room' },
-    { name: 'Company', path: '/about-us' },
+    // { name: 'Company', path: '/about-us' },
     { name: 'Get in touch', path: '/contact-us' },
   ];
 
@@ -16,23 +15,26 @@ const NavSm = () => {
     <div className="w-full bg-white fixed top-0 border-b border-[#E8EAED] z-50">
       <div className="max-w-7xl  mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
         {/* Logo */}
-        <div>
-          <img src="/vibed-dark.png" alt="Vibed Logo" className="h-[2rem]" />
-        </div>
+        <Link
+          to='/'
+        >
+          <div>
+            <img src="/vibed-dark.png" alt="Vibed Logo" className="h-[2rem]" />
+          </div>
+        </Link>
 
         <div className="flex items-center gap-2">
           <button
             className="bg-[#F4A261] px-4 py-2 text-black rounded-full flex items-center gap-2"
           >
-            <i className="fa-solid fa-mobile-screen"></i>
             Download
           </button>
 
-          <div>
+          {/* <div>
             <button onClick={() => setOpen(!open)}>
               {open ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 

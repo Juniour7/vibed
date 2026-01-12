@@ -9,7 +9,7 @@ const NavLg = () => {
   const NavLinks = [
     { name: "Home", path: "/" },
     // { name: "Find Room", path: "/find-room" },
-    { name: "Company", path: "/about-us" },
+    // { name: "Company", path: "/about-us" },
     { name: "Contact Us", path: "/contact-us" },
   ];
 
@@ -73,7 +73,6 @@ const NavLg = () => {
 
           {/* Download Button */}
           <button className="bg-[#F4A261] px-4 py-2 text-black rounded-full flex items-center gap-2">
-            <i className="fa-solid fa-mobile-screen"></i>
             Download
           </button>
 

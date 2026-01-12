@@ -3,16 +3,16 @@
 
 
 const Footer = () => {
-  const Company = [
-  {
-    title: 'About Us',
-    url: '/about-us',
-  },
-  {
-    title: 'Contact Us',
-    url: '/contact-us',
-  }
-]
+//   const Company = [
+//   {
+//     title: 'About Us',
+//     url: '/about-us',
+//   },
+//   {
+//     title: 'Contact Us',
+//     url: '/contact-us',
+//   }
+// ]
 
 const SupportSection = [
   {
@@ -61,8 +61,8 @@ const Legal = [
 
   return (
     <footer className="bg-[#EAEAEC] w-full py-[4rem] font-man">
-      <section className="max-w-7xl  mx-auto px-4 md:px-8 grid md:grid-cols-4 gap-4">
-        <div className="space-y-3 ">
+      <section className="max-w-7xl  mx-auto px-4 md:px-8 grid md:grid-cols-3 gap-4">
+        {/* <div className="space-y-3 ">
           <h4 className="font-semibold">Company</h4>
           <ul className="space-y-2">
             {Company.map((item, index) => (
@@ -71,7 +71,7 @@ const Legal = [
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
         <div className="space-y-3">
           <h4 className="font-semibold">Support</h4>
           <ul className="space-y-2">
