@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const NavLg = () => {
   const location = useLocation();
@@ -72,10 +73,13 @@ const NavLg = () => {
           </div>
 
           {/* Download Button */}
-          <button className="bg-[#F4A261] px-4 py-2 text-black rounded-full flex items-center gap-2">
-            Download
-          </button>
-
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-[#F4A261] text-black rounded-full px-5 md:px-7 py-3 font-medium"
+          >
+            Download App
+          </motion.button>
         </div>
       </div>
     </div>
