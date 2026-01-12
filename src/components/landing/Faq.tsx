@@ -1,29 +1,25 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     {
-      question: "How does Vibed work?",
+      question: "Is my information secure?",
       answer:
-        "Vibed connects you with verified roommates and apartments that match your lifestyle. Simply create a profile, explore listings, get matched, and chat directly in the app to plan your move.",
+        "We prioritize user privacy with robust encryption and secure authentication.",
     },
     {
-      question: "Is my personal information secure on Vibed?",
+      question: "What if I don't like my matches?",
       answer:
-        "Yes, we prioritize user privacy and employ robust security measures to protect your data, including encryption and secure authentication protocols.",
+        "Adjust your preferences at any time to refine your search and improve accuracy.",
     },
     {
       question: "Can I change my preferences after creating my profile?",
       answer:
         "Absolutely! You can update your profile and preferences at any time to refine your roommate search and improve match accuracy.",
-    },
-    {
-      question: "What if I don't like my matched roommates?",
-      answer:
-        "If you're not satisfied with your matches, you can adjust your preferences or reach out to our support team for assistance in finding better-suited roommates.",
     },
   ];
 
@@ -88,6 +84,19 @@ const Faq = () => {
             );
           })}
         </div>
+
+        {/* Trust Footer */}
+        <motion.div
+          className="text-center mt-16 max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+        >
+          <p className="text-sm font-medium text-[#3C4A4D] uppercase tracking-wide">
+            We envision an Ireland where finding a place to live also means finding your kind of people.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
