@@ -1,133 +1,190 @@
-import { motion } from "framer-motion";
-import { MessageSquareText, UserRound, UserStar } from "lucide-react";
-import { fadeUp, cardVariant, container } from "../animations";
+import React, { useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { MessageSquareText, UserRound, UserStar, Home, type LucideIcon } from "lucide-react";
 
-const FindHousemates = () => {
-  const steps = [
+// 1. Define the shape of your Step object
+interface Step {
+  title: string;
+  icon: LucideIcon; // This is the specific type for Lucide icons
+  description: string;
+}
+
+// 2. Define props for the Sub-components
+interface TimelineItemProps {
+  step: Step;
+  index: number;
+  isEven: boolean;
+}
+
+interface ContentCardProps {
+  step: Step;
+  align: "left" | "right";
+}
+
+interface BigNumberProps {
+  number: number;
+  align: "left" | "right";
+}
+
+const FindHousematesVertical: React.FC = () => {
+  const containerRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"],
+  });
+
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const steps: Step[] = [
     {
-      image: "/assets/vibed-1.png",
       title: "Create account",
       icon: UserRound,
-      description:
-        "Set up your profile with your interests, lifestyle preferences, budget, and location.",
+      description: "Set up your profile with your interests, lifestyle preferences, budget, and location.",
     },
     {
-      image: "/assets/vibed-2.jpg",
       title: "Swipe & match",
       icon: UserStar,
-      description:
-        "Discover roommates who fit your lifestyle and personality.",
+      description: "Discover roommates who fit your lifestyle and personality using our smart matching.",
     },
     {
-      image: "/assets/vibed-3.png",
-      title: "Chat",
+      title: "Chat safely",
       icon: MessageSquareText,
-      description:
-        "Get to know your future housemate on the platform.",
+      description: "Get to know your future housemate through our secure, built-in messaging platform.",
     },
     {
-      image: "/assets/vibed-4.jpg",
       title: "Move in",
-      icon: MessageSquareText,
-      description:
-        "Found your match? Start finding the perfect place together.",
+      icon: Home,
+      description: "Found your match? Start finding the perfect place together and sign the lease.",
     },
   ];
 
   return (
-    <section className="relative max-w-7xl mx-auto px-4 md:px-8 py-20">
-      {/* Header */}
-      <motion.div
-        className="text-center space-y-2 mb-20"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={fadeUp}
-      >
-        <h1 className="text-3xl md:text-4xl font-semibold">
-          Find your ideal Housemates
-        </h1>
-        <p className="text-gray-600">
-          In 4 easy steps, connect with trusted individuals that fit your Vibe.
-        </p>
-      </motion.div>
+    <section className="py-24 bg-white overflow-hidden" ref={containerRef}>
+      <div className="max-w-4xl mx-auto px-4 relative">
+        
+        {/* Header */}
+        <div className="text-center mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Find your ideal Housemates
+            </h1>
+            <p className="text-gray-500 max-w-lg mx-auto text-lg">
+              In 4 easy steps, connect with trusted individuals that fit your Vibe.
+            </p>
+          </motion.div>
+        </div>
 
-      {/* Curved dotted connectors (desktop only) */}
-      <svg
-        className="absolute top-44 left-1/2 -translate-x-1/2 w-full max-w-5xl hidden md:block pointer-events-none"
-        height="900"
-        viewBox="0 0 800 900"
-        fill="none"
-      >
-        <path
-          d="M100 50 C 400 50, 400 250, 700 250"
-          stroke="#F4A261"
-          strokeWidth="2"
-          strokeDasharray="4 6"
-        />
-        <path
-          d="M700 300 C 400 300, 400 500, 100 500"
-          stroke="#F4A261"
-          strokeWidth="2"
-          strokeDasharray="4 6"
-        />
-        <path
-          d="M100 550 C 400 550, 400 750, 700 750"
-          stroke="#F4A261"
-          strokeWidth="2"
-          strokeDasharray="4 6"
-        />
-      </svg>
+        {/* --- VERTICAL LINE --- */}
+        <div className="absolute left-8 md:left-1/2 top-48 bottom-24 w-1 bg-gray-100 -translate-x-1/2 rounded-full z-0">
+          <motion.div
+            style={{ 
+              scaleY, 
+              transformOrigin: "top",
+              height: "100%" 
+            }}
+            className="w-full bg-[#F4A261] rounded-full"
+          />
+        </div>
 
-      {/* Steps */}
-      <motion.div
-        className="relative grid grid-cols-1 md:grid-cols-2 gap-y-28 gap-x-20"
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        {steps.map((step, index) => {
-          const isRight = index % 2 !== 0;
-
-          return (
-            <motion.div
-              key={index}
-              className={`relative flex flex-col ${isRight ? "md:translate-y-20" : ""}`}
-              variants={cardVariant}
-              whileHover={{ y: -4 }}
-            >
-              {/* Step number */}
-              <div className="absolute -top-10 left-0 w-9 h-9 rounded-full bg-[#F4A261]/20 text-[#F4A261] flex items-center justify-center font-semibold">
-                {index + 1}
-              </div>
-
-              {/* Image */}
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  loading="lazy"
-                  className="w-full h-[260px] object-cover"
-                />
-              </div>
-
-              {/* Text */}
-              <div className="mt-4 max-w-sm">
-                <div className="flex items-center gap-1">
-                  <span className="text-[#F4A261]">
-                    <step.icon className="text-[#F4A261] w-5 h-5" />
-                  </span>
-                  <h3 className="font-semibold text-lg">{step.title}</h3>
-                </div>
-                <p className="text-gray-600 mt-2">{step.description}</p>
-              </div>
-            </motion.div>
-          );
-        })}
-      </motion.div>
+        {/* Steps Container */}
+        <div className="space-y-24 md:space-y-32 relative z-10">
+          {steps.map((step, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <TimelineItem 
+                key={index} 
+                step={step} 
+                index={index} 
+                isEven={isEven} 
+              />
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 };
 
-export default FindHousemates;
+// 3. Apply types to the sub-components
+const TimelineItem: React.FC<TimelineItemProps> = ({ step, index, isEven }) => {
+  return (
+    <motion.div
+      className={`relative flex items-center md:justify-between ${
+        "flex-row md:flex-row" 
+      }`}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+    >
+      
+      {/* LEFT SIDE (Desktop) */}
+      <div className={`hidden md:block w-5/12 ${isEven ? "text-right" : "text-left"}`}>
+        {isEven ? (
+          <ContentCard step={step} align="right" />
+        ) : (
+          <BigNumber number={index + 1} align="left" />
+        )}
+      </div>
+
+      {/* CENTER ICON */}
+      <div className="absolute left-8 md:left-1/2 -translate-x-1/2 flex items-center justify-center">
+        <div className="w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-white shadow-lg rounded-full flex items-center justify-center relative z-10">
+          <div className="w-full h-full rounded-full bg-[#F4A261]/10 flex items-center justify-center">
+            {/* We render the icon component here */}
+            <step.icon className="w-5 h-5 md:w-7 md:h-7 text-[#F4A261]" />
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT SIDE (Desktop) & MOBILE CONTENT */}
+      <div className="pl-20 md:pl-0 w-full md:w-5/12">
+        {/* Mobile View */}
+        <div className="block md:hidden">
+          <ContentCard step={step} align="left" />
+        </div>
+        
+        {/* Desktop View */}
+        <div className="hidden md:block">
+          {!isEven ? (
+            <ContentCard step={step} align="left" />
+          ) : (
+            <BigNumber number={index + 1} align="right" />
+          )}
+        </div>
+      </div>
+
+    </motion.div>
+  );
+};
+
+const ContentCard: React.FC<ContentCardProps> = ({ step, align }) => (
+  <div className={`flex flex-col ${align === "right" ? "items-end" : "items-start"}`}>
+    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{step.title}</h3>
+    <p className={`text-gray-500 leading-relaxed ${align === "right" ? "text-right" : "text-left"}`}>
+      {step.description}
+    </p>
+  </div>
+);
+
+const BigNumber: React.FC<BigNumberProps> = ({ number, align }) => (
+  <div 
+    className={`text-9xl font-bold text-gray-100 select-none pointer-events-none 
+      ${align === "right" ? "text-left ml-12" : "text-right mr-12"}
+    `}
+  >
+    0{number}
+  </div>
+);
+
+export default FindHousematesVertical;
