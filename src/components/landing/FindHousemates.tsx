@@ -76,7 +76,7 @@ const FindHousematesVertical: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Find your ideal Housemates
+              The "No-Stress" Process (4 Steps)
             </h1>
             <p className="text-gray-500 max-w-lg mx-auto text-lg">
               In 4 easy steps, connect with trusted individuals that fit your Vibe.
