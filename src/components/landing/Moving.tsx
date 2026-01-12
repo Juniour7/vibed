@@ -54,7 +54,7 @@ const Moving = () => {
         className="text-white pl-3"
         variants={slideRight}
       >
-        Try Ireland&apos;s Most Innovative Housemate Matching Platform
+         Join Vibers who found a home before they even landed.
       </motion.p>
     </motion.section>
   );

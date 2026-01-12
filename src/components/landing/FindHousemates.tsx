@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { MessageSquareText, UserRound, UserStar, Home, type LucideIcon } from "lucide-react";
+import {  UserRound, Home, type LucideIcon, Handshake, GalleryHorizontalEnd } from "lucide-react";
 
 // 1. Define the shape of your Step object
 interface Step {
@@ -42,24 +42,24 @@ const FindHousematesVertical: React.FC = () => {
 
   const steps: Step[] = [
     {
-      title: "Create account",
+      title: "Vibe Check",
       icon: UserRound,
-      description: "Set up your profile with your interests, lifestyle preferences, budget, and location.",
+      description: "Create a profile that showcases your personality and preferences.",
     },
     {
       title: "Swipe & match",
-      icon: UserStar,
-      description: "Discover roommates who fit your lifestyle and personality using our smart matching.",
+      icon: GalleryHorizontalEnd,
+      description: "Discover potential housemates whose social energy and lifestyle habits align with yours.",
     },
     {
-      title: "Chat safely",
-      icon: MessageSquareText,
-      description: "Get to know your future housemate through our secure, built-in messaging platform.",
+      title: "The Virtual Handshake",
+      icon: Handshake,
+      description: "Get to know your future housemates via secure, in-app messaging. Set up video tours to see the room and meet the crew before you pack your bags.",
     },
     {
-      title: "Move in",
+      title: "Land & Live",
       icon: Home,
-      description: "Found your match? Start finding the perfect place together and sign the lease.",
+      description: "Secure your spot and land in Ireland with a home waiting for you.",
     },
   ];
 

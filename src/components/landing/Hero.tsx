@@ -42,7 +42,7 @@ const scaleIn: Variants = {
       <div className="w-full h-full bg-black/70 flex flex-col justify-center items-center">
         <motion.div
           className="text-center text-white px-4 space-y-6 w-full"
-          variants={container} // This should no longer be red
+          variants={container} 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
@@ -57,7 +57,7 @@ const scaleIn: Variants = {
               <span className="text-[#F4A261]">and Vibe</span>
             </h1>
             <p className="text-lg md:text-xl">
-              Welcome to Vibed – The Most Innovative Housemates matching App in Ireland
+              Moving to Ireland is a massive leap. Vibed connects you with verified housemates who share your lifestyle, your budget, and your preferences. 
             </p>
           </motion.div>
 
@@ -80,7 +80,7 @@ const scaleIn: Variants = {
                 type="submit"
                 className="bg-[#F4A261] text-black px-6 py-2 rounded-full font-medium whitespace-nowrap hidden md:block"
               >
-                Get Started
+                Find My Tribe
               </motion.button>
             </div>
 

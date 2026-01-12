@@ -1,124 +1,187 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Check, Shield, Sparkles, User } from "lucide-react";
 import { fadeUp, cardVariant, container, waterWiggle } from "../animations";
-
 import SignupModal from "../SignupModal";
 
 const Pricing = () => {
-  const [isSignupOpen, setIsSignupOpen] = useState<boolean>(false);;
-  const PricingPlans = [
-    {
-      name: "Our most popular: €24.99 (2 weeks)",
-      benefits: [
-        "Access hundreds of profiles and make your choice",
-        "Unlimited swipes & chats",
-        "List your short-term sublet.",
-      ],
-      btn: "Subscribe  €24.99 — 2 Weekly Plan",
-    },
-    {
-      name: "Premium Plan: €59.99 (1 month)",
-      benefits: [
-        "Browse through verified matches",
-        "Access the database of all the rentals in Ireland so you don't have to scroll through many platforms. Just tell us what you're looking for.",
-        "Short-listed homes based on your and your housemates' preferences.",
-        "List your sublet and choose the kind of profiles it is shown to.",
-      ],
-      btn: "Get 1-Month Access — €59.99",
-    },
-  ];
+  const [isSignupOpen, setIsSignupOpen] = useState<boolean>(false);
 
   return (
-    <section className="w-full bg-[url('/assets/lines.png')] bg-contain bg-no-repeat py-[3rem] font-man">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-7">
-        {/* Heading */}
+    <section className="relative w-full py-24 bg-[url('/assets/lines.png')] bg-contain bg-no-repeat overflow-hidden font-man">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none bg-[url('/assets/lines.png')] bg-contain bg-no-repeat" />
+      
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        
+        {/* Header */}
         <motion.div
-          className="text-center space-y-3"
+          className="text-center max-w-3xl mx-auto mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={fadeUp}
         >
-          <h5 className="text-[#F4A261]">PRICING</h5>
-          <h1 className="font-sans text-2xl md:text-3xl lg:text-4xl font-semibold">
-            Simple Plan for Every Need
+          <h5 className="text-[#F4A261] font-bold tracking-widest uppercase text-sm mb-3">
+            Peace of Mind
+          </h5>
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 ">
+            Investment in your Peace of Mind
           </h1>
-          <p className="font-medium lg:w-[60%] mx-auto">
-            Whether you’re just exploring or want to get matched faster, there’s a plan that fits your lifestyle.
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Think of this as your housing insurance. For less than the cost of a takeout dinner, 
+            secure a safe, verified, and curated housing experience.
           </p>
         </motion.div>
 
-        {/* Pricing Cards */}
+        {/* Plans Container */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-7 justify-center md:w-[70%] mx-auto"
+          className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 lg:items-stretch"
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
-          {PricingPlans.map((plan, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md"
-              variants={cardVariant}
-              whileHover={{ y: -4 }}
-            >
-              <h2 className="text-xl md:text-2xl font-bold mb-4 font-sans">{plan.name}</h2>
-              <ul className="mb-4 space-y-2 text-[#2B2B2B]">
-                {plan.benefits.map((benefit, i) => (
-                  <li key={i} className="flex gap-1 items-start text-sm">
-                    <div className="flex flex-col justify-center p-1 bg-[#EAEAEC] rounded-full">
-                      <i className="fa-solid fa-check"></i>
-                    </div>
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
+          
+          {/* 1. FREE PLAN (Side Anchor) */}
+          <motion.div 
+            className="w-full max-w-md lg:w-1/3 order-2 lg:order-1"
+            variants={cardVariant}
+          >
+            <div className="h-full bg-white border border-gray-100 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <User className="w-6 h-6 text-gray-400" />
+                  <h3 className="text-xl font-bold text-gray-600">Starter</h3>
+                </div>
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-gray-900">Free</span>
+                  <span className="text-gray-500 ml-2">/ forever</span>
+                </div>
+                <p className="text-gray-500 mb-8 border-b border-gray-100 pb-8">
+                  Just exploring? Perfect for browsing matches and creating your profile.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Create your profile",
+                    "Browse roommate matches",
+                    "Access 24/7 Support"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-600 text-sm">
+                      <Check className="w-5 h-5 text-gray-300 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <motion.button
-                className="w-full bg-[#B58863] text-white py-2 rounded-md hover:bg-[#e79a5a] transition duration-300"
+                className="w-full mt-8 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-semibold hover:border-gray-300 hover:bg-gray-50 transition-colors"
                 variants={waterWiggle}
                 whileTap="tap"
                 whileHover="hover"
                 onClick={() => setIsSignupOpen(true)}
               >
-                {plan.btn}
+                Start for Free
               </motion.button>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+
+          {/* 2. VIP PLAN (Hero Card) */}
+          <motion.div 
+            className="w-full max-w-md lg:w-5/12 order-1 lg:order-2 relative"
+            variants={cardVariant}
+            whileHover={{ y: -8 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            {/* Best Value Badge */}
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#B58863] text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg z-20">
+              Recommended Choice
+            </div>
+
+            <div className="h-full bg-white rounded-2xl p-1 relative z-10 shadow-2xl">
+              {/* Inner Border Gradient */}
+              <div className="h-full bg-gradient-to-b from-[#FDF8F4] to-white rounded-xl p-8 border border-[#F4A261]/20 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 bg-[#F4A261]/20 rounded-lg">
+                        <Shield className="w-6 h-6 text-[#F4A261]" />
+                      </div>
+                      <h3 className="text-xl font-bold text-[#B58863]">Peace-of-Mind VIP</h3>
+                    </div>
+                  </div>
+
+                  <div className="mb-6 flex items-baseline">
+                    <span className="text-5xl font-bold text-gray-900">€19.99</span>
+                    <span className="text-gray-500 font-medium ml-2">/ month</span>
+                  </div>
+
+                  <p className="text-gray-600 mb-8 font-medium">
+                    Complete concierge support. Don't scroll endlessly—let us handle the search for you.
+                  </p>
+
+                  <ul className="space-y-5 mb-8">
+                    <li className="flex items-start gap-3 text-gray-700">
+                      <div className="mt-0.5 p-0.5 bg-[#F4A261] rounded-full text-white">
+                        <Check className="w-3 h-3" />
+                      </div>
+                      <span className="text-sm font-semibold">Complete Concierge Support</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-gray-700">
+                      <div className="mt-0.5 p-0.5 bg-[#F4A261] rounded-full text-white">
+                        <Check className="w-3 h-3" />
+                      </div>
+                      <span className="text-sm">Access to a <span className="font-semibold text-[#B58863]">curated database</span> of rentals (no more platform hopping).</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-gray-700">
+                      <div className="mt-0.5 p-0.5 bg-[#F4A261] rounded-full text-white">
+                        <Sparkles className="w-3 h-3" />
+                      </div>
+                      <span className="text-sm">
+                         Susan <span className="font-semibold text-[#B58863]">personally shortlists homes</span> based on your exact vibe & preferences.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <motion.button
+                  className="w-full py-4 rounded-xl bg-[#B58863] text-white text-lg font-bold shadow-[0_4px_14px_0_rgba(181,136,99,0.39)] hover:shadow-[0_6px_20px_rgba(181,136,99,0.23)] hover:bg-[#a67c5a] transition duration-300"
+                  variants={waterWiggle}
+                  whileTap="tap"
+                  whileHover="hover"
+                  onClick={() => setIsSignupOpen(true)}
+                >
+                  Get VIP Access
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+
         </motion.div>
 
-        {/* Free Plan */}
+        {/* Trust Footer */}
         <motion.div
-          className="text-center pt-[1rem]"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={fadeUp}
+          className="text-center mt-16 max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
         >
-          <h2 className="text-xl md:text-2xl font-bold mb-4 font-sans">Free Plan</h2>
-          <p className="text-[#2B2B2B]">
-            3 free swipes — Create a profile, Swift up to 3 profiles, match with roommates.
+          <div className="flex items-center justify-center gap-2 mb-2 text-[#3C4A4D] font-medium">
+            <Shield className="w-4 h-4" />
+            <span>100% Secure & Verified Process</span>
+          </div>
+          <p className="text-xs text-gray-400 uppercase tracking-wide">
+            All plans include safe messaging & verified badges
           </p>
-          <h6 className="text-lg text-[#3C4A4D] font-medium">
-            All plans include safe messaging, verified badges, and 24/7 support.
-          </h6>
-          <motion.button
-            className="bg-[#A79E9C] rounded-lg text-white font-medium px-7 py-3 text-lg mt-[1rem]"
-            variants={waterWiggle}
-            whileTap="tap"
-            whileHover="hover"
-            onClick={() => setIsSignupOpen(true)}
-          >
-            Start free and Upgrade anytime
-          </motion.button>
         </motion.div>
+
       </div>
 
-       {/* Modal */}
-        <SignupModal
-          isOpen={isSignupOpen}
-          onClose={() => setIsSignupOpen(false)}
-        />
+      <SignupModal
+        isOpen={isSignupOpen}
+        onClose={() => setIsSignupOpen(false)}
+      />
     </section>
   );
 };
