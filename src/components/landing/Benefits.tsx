@@ -55,11 +55,8 @@ const Benefits = () => {
             The Secret Sauce
           </span>
           <h1 className="font-sans text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Meet Susan, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F4A261] to-[#E76F51]">Your Smart Matchmaker</span>
+            Meet Susan
           </h1>
-          <p className="text-lg text-gray-600 font-medium pt-2">
-            Tell Susan what matters to you, and she’ll take care of the rest — matching you with the right people and the right vibe, stress-free.
-          </p>
         </motion.div>
 
         {/* Staggered Cards Layout */}
