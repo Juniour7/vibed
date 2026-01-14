@@ -1,5 +1,4 @@
   import { motion } from "framer-motion";
-  import FindHousemates from "./FindHousemates";
   import { container, fadeUp, cardVariant  } from "../animations";
 
 
@@ -63,8 +62,7 @@
           </motion.div>
         </motion.div>
 
-        {/* Next section */}
-        <FindHousemates />
+        
       </section>
     );
   };
