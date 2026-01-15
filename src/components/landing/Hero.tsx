@@ -38,7 +38,7 @@ const scaleIn: Variants = {
 };
 
   return (
-    <section className="w-full bg-[url('/assets/hero.png')] bg-fixed bg-cover bg-center h-screen">
+    <section className="w-full bg-[url('/assets/hero.png')] bg-scroll md:bg-fixed bg-cover bg-center h-[100dvh]">
       <div className="w-full h-full bg-black/70 flex flex-col justify-center items-center">
         <motion.div
           className="text-center text-white px-4 space-y-6 w-full"
