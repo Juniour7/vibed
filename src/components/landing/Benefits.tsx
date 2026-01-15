@@ -54,9 +54,6 @@ const Benefits = () => {
           <span className="inline-block py-1 px-3 rounded-full bg-[#F4A261]/10 text-[#F4A261] text-sm font-bold tracking-wider uppercase">
             The Secret Sauce
           </span>
-          <h1 className="font-sans text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Meet Susan
-          </h1>
         </motion.div>
 
         {/* Staggered Cards Layout */}
